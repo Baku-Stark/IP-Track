@@ -1,6 +1,8 @@
 import os
 import json
+
 from lib.colors import Colors
+from lib.map_creator import Creator as creator
 
 try:
     import requests
@@ -50,6 +52,8 @@ def IP_TRACK(ip: str):
                     └── Mobile: {track['mobile']}
             """
         )
+
+        creator.point_placer(ip)
     
     else:
         print(Colors.BACK_RED + " IP ADDRESS " + Colors.END, end="")
