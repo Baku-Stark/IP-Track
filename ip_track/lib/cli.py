@@ -18,7 +18,7 @@ async def parser():
     if args.ip:
         print(MAIN_BANNER)
         Ip = args.ip
-        IP_TRACK(Ip)
+        await IP_TRACK(Ip)
 
     else:
         print(MENU_BANNER)

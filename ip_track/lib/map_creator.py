@@ -2,7 +2,7 @@ import requests
 import folium, os
 
 from lib.colors import Colors
-from .objects import TempPrint
+from .temp import TempPrint
 
 PATH = os.path.abspath("output/location.html")
 

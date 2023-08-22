@@ -1,6 +1,8 @@
 import os
 import json
 
+from modules.proton import vpnchecker
+
 from lib.colors import Colors
 from lib.map_creator import Creator as creator
 
@@ -13,7 +15,7 @@ except ModuleNotFoundError:
 finally:
     pass
 
-def IP_TRACK(ip: str):
+async def IP_TRACK(ip: str):
     track_req = requests.get(
         f"http://ip-api.com/json/{ip}?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query", timeout=5
     )
@@ -54,6 +56,7 @@ def IP_TRACK(ip: str):
         )
 
         creator.point_placer(ip)
+        print(await vpnchecker(ip))
     
     else:
         print(Colors.BACK_RED + " IP ADDRESS " + Colors.END, end="")
