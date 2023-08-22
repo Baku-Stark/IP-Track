@@ -10,7 +10,7 @@
 
 > **APIs**
 
-<div align="center">
+<div align="left">
 
 **API Name** | **Documentation**
 --- | ---
